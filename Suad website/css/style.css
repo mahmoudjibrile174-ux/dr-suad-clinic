@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap");
+
+:root {
+  --gold: #b28e5c;
+  --dark: #333d47;
+  --bg: #f2f2f2; /* الخلفية السكنية */
+  --white: #ffffff;
+  --gray: #7f8c8d;
+  --btn-grey: #a0a0a0; /* لون الأزرار السكني الجديد */
+  --btn-grey-hover: #808080; /* لون الأزرار عند تمرير الماوس */
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Tajawal", sans-serif;
+  direction: rtl;
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+/* --- الهيدر (Navbar) --- */
+header {
+  background: var(--white);
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.doctor-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.doctor-thumb {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--gold);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  position: relative;
+  top: 35px;
+  z-index: 2001;
+}
+
+.brand-text h1 {
+  font-size: 24px !important;
+  color: var(--dark);
+  margin: 0;
+}
+
+.brand-text span {
+  font-size: 12px;
+  color: var(--gray);
+  display: block;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.top-nav a:hover {
+  color: var(--gold);
+}
+
+/* زر الاستشارة في الناف بار باللون السكني */
+.btn-consult-nav {
+  background: var(--btn-grey) !important;
+  color: white !important;
+  padding: 10px 22px !important;
+  border-radius: 50px !important;
+  transition: var(--transition) !important;
+}
+
+.btn-consult-nav:hover {
+  background: var(--btn-grey-hover) !important;
+}
+
+/* --- قسم الـ Hero --- */
+.hero-container {
+  max-width: 1200px;
+  margin: 180px auto 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 50px;
+}
+
+.hero-text-side {
+  flex: 1.2;
+}
+
+.main-title {
+  font-size: 45px;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.main-title span {
+  color: var(--dark);
+}
+
+.hero-desc {
+  font-size: 19px;
+  color: var(--gray);
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 550px;
+}
+
+/* الزر الرئيسي باللون السكني */
+.btn-hero {
+  background: var(--btn-grey);
+  color: white;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.btn-hero:hover {
+  background: var(--btn-grey-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* --- فريم الموبايل والشعار --- */
+.phone-mockup {
+  width: 320px;
+  height: 640px;
+  background: white;
+  border: 12px solid var(--dark);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 20px 40px 80px rgba(0, 0, 0, 0.08);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.phone-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* هذه الخاصية تجعل اللوجو يظهر كاملاً دون قص */
+  transition: var(--transition);
+}
+
+.floating-tag {
+  position: absolute;
+  bottom: 50px;
+  left: -40px;
+  background: white;
+  padding: 12px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-weight: 800;
+  color: var(--gold);
+}
+
+/* --- نافذة الإدارة (Modal) --- */
+.admin-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+}
+#adminBtn {
+  cursor: pointer !important;
+  position: relative;
+  z-index: 2005; /* رفعه فوق أي عناصر متداخلة */
+}
+
+.admin-modal-content {
+  background: white;
+  width: 380px;
+  padding: 40px;
+  border-radius: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* زر الدخول في صفحة الإدارة باللون السكني */
+.admin-modal-content button {
+  width: 100%;
+  padding: 14px;
+  background: var(--btn-grey);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.admin-modal-content button:hover {
+  background: var(--btn-grey-hover);
+}
+
+footer {
+  text-align: center;
+  padding: 50px;
+  color: #bbb;
+  border-top: 1px solid #eee;
+  margin-top: 50px;
+}
+/* --- تنسيق قسم الأسئلة الشائعة --- */
+.faq-section {
+  padding: 80px 20px;
+  background-color: var(--bg); /* اللون السكني */
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-item {
+  background: var(--white);
+  margin-bottom: 15px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: right;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  font-weight: 800;
+  color: var(--dark);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 16px;
+}
+/* --- تعديلات الشاشات الصغيرة (الموبايل) --- */
+@media (max-width: 768px) {
+  /* 1. الهيدر: تقليل الحشو وإخفاء بعض العناصر إذا لزم الأمر */
+  header {
+    padding: 0 4%;
+    height: 70px;
+  }
+
+  .doctor-thumb {
+    width: 80px; /* تصغير صورة الطبيبة في الموبايل */
+    height: 80px;
+    top: 20px;
+  }
+
+  .brand-text h1 {
+    font-size: 18px !important;
+  }
+
+  /* 2. إخفاء القائمة العلوية أو تحويلها (اختياري) */
+  .top-nav {
+    gap: 10px;
+  }
+
+  .top-nav a:not(.btn-consult-nav) {
+    display: none; /* إخفاء الروابط العادية وإبقاء زر الاستشارة فقط للمساحة */
+  }
+
+  .btn-consult-nav {
+    padding: 8px 15px !important;
+    font-size: 12px !important;
+  }
+
+  /* 3. قسم الـ Hero: تحويل العناصر لتصبح تحت بعضها */
+  .hero-container {
+    flex-direction: column; /* جعل النص فوق الموبايل */
+    margin-top: 120px;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    margin: 0 auto 30px;
+  }
+
+  /* 4. فريم الموبايل: تصغيره ليتناسب مع شاشة الهاتف الحقيقية */
+  .phone-mockup {
+    width: 260px;
+    height: 520px;
+    margin: 0 auto;
+  }
+
+  .floating-tag {
+    left: 10px;
+    bottom: 20px;
+    font-size: 12px;
+  }
+
+  /* 5. نافذة الإدارة (Modal): جعل عرضها مرناً */
+  .admin-modal-content {
+    width: 90%; /* لتأخذ 90% من عرض الشاشة بدلاً من 380px */
+    padding: 25px;
+  }
+
+  /* 6. الأسئلة الشائعة */
+  .faq-item {
+    padding: 15px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+}

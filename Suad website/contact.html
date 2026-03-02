@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تواصل معنا | د. سعاد عويض</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* تنسيقات مخصصة لعناصر التواصل داخل الصفحة */
+      .contact-card {
+        background: var(--white);
+        padding: 40px;
+        border-radius: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+        padding: 20px;
+        border-radius: 15px;
+        transition: var(--transition);
+        text-decoration: none;
+        color: var(--dark);
+        border: 1px solid #eee;
+      }
+
+      .contact-item:hover {
+        background: #f9f9f9;
+        transform: translateX(-10px);
+        border-color: var(--gold);
+      }
+
+      .icon-circle {
+        width: 60px;
+        height: 60px;
+        background: var(--bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+      }
+
+      .contact-info h4 {
+        margin: 0;
+        color: var(--gold);
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .contact-info p {
+        margin: 0;
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--dark);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="index.html" class="doctor-brand">
+          <img
+            src="images/WhatsApp Image 2026-02-23 at 4.36.14 PM.jpeg"
+            alt="د. سعاد عويض"
+            class="doctor-thumb"
+          />
+          <div class="brand-text">
+            <h1>د. سعاد عويض</h1>
+            <span>أخصائية عناية بالبشرة</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="top-nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <!-- <a href="faq.html">الأسئلة الشائعة</a> -->
+        <a href="contact.html">تواصل معنا</a>
+        <!-- <a
+          href="javascript:void(0)"
+          id="adminBtn"
+          onclick="document.getElementById('admin-login-modal').style.display='block'"
+          >Admin</a
+        > -->
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdjxDrgDfrsRfwXGWUCJdp5_LtEDp7Aum8ej7c01zuxBGDjkA/viewform"
+          class="btn-consult-nav"
+          target="_blank"
+          >استشارة مجانية</a
+        >
+        <!-- > -->
+      </nav>
+    </header>
+
+    <main class="hero-container" style="display: block; text-align: right">
+      <h2 class="main-title">تواصل <span>معنا</span></h2>
+      <p class="hero-desc">
+        نحن هنا للإجابة على جميع استفساراتكم. يمكنك التواصل معنا مباشرة عبر
+        القنوات التالية:
+      </p>
+
+      <div class="contact-card">
+        <a href="mailto:suadahmad293@gmail.com" class="contact-item">
+          <div class="icon-circle">📧</div>
+          <div class="contact-info">
+            <h4>البريد الإلكتروني/Gmail</h4>
+            <p>skincaresuad@gmail.com</p>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/suad.ahmad02/"
+          target="_blank"
+          class="contact-item"
+        >
+          <div class="icon-circle">📸</div>
+          <div class="contact-info">
+            <h4>إنستغرام / Instagram</h4>
+            <p>suad.ahmad02</p>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <footer>© د. سعاد عويض – جميع الحقوق محفوظة 2024</footer>
+
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+      const modal = document.getElementById("admin-login-modal");
+      const loginBtn = document.getElementById("admin-login-btn");
+      const errorMsg = document.getElementById("admin-error");
+
+      const users = [
+        { username: "mahmoud", password: "2/7/1998" },
+        { username: "suad", password: "2/9/2003" },
+      ];
+
+      loginBtn.addEventListener("click", () => {
+        const u = document
+          .getElementById("admin-username")
+          .value.trim()
+          .toLowerCase();
+        const p = document.getElementById("admin-password").value.trim();
+        if (users.some((user) => user.username === u && user.password === p)) {
+          window.location.href = "admin.html";
+        } else {
+          errorMsg.style.display = "block";
+        }
+      });
+
+      window.onclick = (event) => {
+        if (event.target == modal) modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>د. سعاد عويض | استشارات جلدية مجانية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="index.html" class="doctor-brand">
+          <img
+            src="images/WhatsApp Image 2026-02-23 at 4.36.14 PM.jpeg"
+            alt="د. سعاد عويض"
+            class="doctor-thumb"
+          />
+          <div class="brand-text">
+            <h1>د. سعاد عويض</h1>
+            <span>أخصائية عناية بالبشرة</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="top-nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a
+          href="javascript:void(0)"
+          id="adminBtn"
+          onclick="document.getElementById('admin-login-modal').style.display='block'"
+          >Admin</a
+        >
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdjxDrgDfrsRfwXGWUCJdp5_LtEDp7Aum8ej7c01zuxBGDjkA/viewform"
+          class="btn-consult-nav"
+          target="_blank"
+          >استشارة مجانية</a
+        >
+      </nav>
+    </header>
+
+    <section class="hero-container">
+      <div class="hero-text-side">
+        <h2 class="main-title">
+          مرحباً بكم في منصة <br /><span>د. سعاد عويض</span>
+        </h2>
+        <p class="hero-desc">
+          وجهك يحكي قصتك… ونحن هنا لنساعدك تظهرها بأفضل صورة. نقدّم استشارات
+          متخصصة في تحليل ملامح الوجه، العناية بالبشرة، والخيارات التجميلية
+          المناسبة لكل حالة.
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdjxDrgDfrsRfwXGWUCJdp5_LtEDp7Aum8ej7c01zuxBGDjkA/viewform"
+          class="btn-hero"
+          target="_blank"
+          >اطلب استشارة مجانية الآن</a
+        >
+      </div>
+
+      <div class="hero-image-side">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <img
+              src="images/WhatsApp Image 2026-02-23 at 4.35.57 PM.jpeg"
+              alt="شعار د. سعاد عويض"
+              class="phone-logo"
+            />
+          </div>
+          <div class="floating-tag">✨ استشارة فورية</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-container">
+        <h2 class="main-title">الأسئلة <span>الشائعة</span></h2>
+        <div class="faq-item">
+          <div class="faq-question">هل الاستشارة مجانية؟</div>
+          <div class="faq-answer">
+            نعم، جميع الاستشارات المقدمة عبر المنصة مجانية بالكامل.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">كيف يمكنني حجز استشارة؟</div>
+          <div class="faq-answer">
+            عبر الضغط على زر "اطلب استشارة مجانية" وتعبئة النموذج المخصص.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="admin-login-modal" class="admin-modal" style="display: none">
+      <div class="admin-modal-content">
+        <h3>دخول الإدارة</h3>
+        <input type="text" id="admin-username" placeholder="اسم المستخدم" />
+        <input type="password" id="admin-password" placeholder="كلمة السر" />
+        <button id="admin-login-btn">دخول</button>
+        <p id="admin-error" style="display: none; color: red; margin-top: 10px">
+          البيانات غير صحيحة
+        </p>
+      </div>
+    </div>
+
+    <footer>© د. سعاد عويض – جميع الحقوق محفوظة 2024</footer>
+
+    <script>
+      const modal = document.getElementById("admin-login-modal");
+      const loginBtn = document.getElementById("admin-login-btn");
+
+      loginBtn.addEventListener("click", () => {
+        const u = document
+          .getElementById("admin-username")
+          .value.trim()
+          .toLowerCase();
+        const p = document.getElementById("admin-password").value.trim();
+        if (
+          (u === "mahmoud" && p === "2/7/1998") ||
+          (u === "suad" && p === "2/9/2003")
+        ) {
+          window.location.href = "admin.html";
+        } else {
+          document.getElementById("admin-error").style.display = "block";
+        }
+      });
+      window.onclick = (event) => {
+        if (event.target == modal) modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
